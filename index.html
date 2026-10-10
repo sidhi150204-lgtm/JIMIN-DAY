@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Jimin 💜</title>
+<meta name="description" content="A birthday surprise for Park Jimin from ARMY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- music player (YouTube, sound only) -->
+<div id="ytwrap" aria-hidden="true"><div id="ytplayer"></div></div>
+<button id="soundBtn" class="sound-btn" type="button" hidden aria-label="Mute or unmute the music">🔊</button>
+
+<main>
+
+  <!-- PAGE 1: countdown -->
+  <section class="page active" id="p-count">
+    <div class="hero">
+      <div class="ghost" aria-hidden="true">지민</div>
+      <div class="hero-inner">
+        <h1 id="headline">Jimin turns 31 in</h1>
+        <div class="clock" id="clock" role="timer" aria-live="off">
+          <div class="unit"><span id="d">00</span><small>days</small></div>
+          <div class="unit"><span id="h">00</span><small>hours</small></div>
+          <div class="unit"><span id="m">00</span><small>minutes</small></div>
+          <div class="unit"><span id="s">00</span><small>seconds</small></div>
+        </div>
+        <p class="sub" id="sub"></p>
+        <button id="reveal" class="cta" type="button" hidden>Reveal Surprise 🎁</button>
+        <p class="hint" id="hint" hidden>🔊 Tap anywhere to turn on the music</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2: surprise -->
+  <section class="page" id="p-surprise">
+    <div class="wrap">
+      <header class="pagehead">
+        <p class="ko huge">생일 축하해, 지민!</p>
+        <p class="en">Happy birthday, Jimin!</p>
+      </header>
+
+      <div class="board" id="pins1"></div>
+
+      <div class="lines">
+        <div class="line"><p class="ko">태어나 줘서 고마워</p><p class="en">Thank you for being born.</p></div>
+        <div class="line"><p class="ko">항상 우리 곁에 있어 줘서 고마워</p><p class="en">Thank you for always being by our side.</p></div>
+        <div class="line"><p class="ko">네가 웃으면 우리도 행복해</p><p class="en">When you smile, we are happy too.</p></div>
+        <div class="line"><p class="ko">오늘이 너에게 가장 행복한 하루가 되길 바라</p><p class="en">I hope today is the happiest day for you.</p></div>
+        <div class="line"><p class="ko">앞으로도 늘 건강하고 행복하길</p><p class="en">Wishing you good health and happiness always.</p></div>
+        <div class="line"><p class="ko">아미는 너를 정말 많이 사랑해</p><p class="en">ARMY loves you so much.</p></div>
+        <div class="line"><p class="ko">우리는 영원히 네 곁에 있을게</p><p class="en">We will always be by your side.</p></div>
+        <div class="line"><p class="ko">보라해 💜</p><p class="en">Borahae, "I purple you" (our way of saying I love you).</p></div>
+      </div>
+
+      <div class="more">
+        <p class="ko">아직 더 많은 이야기가 남아 있어</p>
+        <p class="en">And there is so much more…</p>
+      </div>
+
+      <div class="actions"><button id="toLetter" class="cta" type="button">Next →</button></div>
+    </div>
+  </section>
+
+  <!-- PAGE 3: letter form -->
+  <section class="page" id="p-letter">
+    <div class="wrap">
+      <header class="pagehead">
+        <p class="ko huge">지민에게 보내는 생일 편지</p>
+        <p class="en">A birthday letter for Jimin</p>
+      </header>
+
+      <div class="board" id="pins2"></div>
+
+      <form id="cardForm" class="card-form" novalidate>
+        <h2>Write your birthday letter 💌</h2>
+
+        <label for="cName">Your name</label>
+        <input id="cName" maxlength="40" autocomplete="off" placeholder="Your name or ARMY username">
+
+        <label for="cAge">Your age</label>
+        <input id="cAge" type="number" min="1" max="120" inputmode="numeric" placeholder="Age">
+
+        <label for="cMsg">Your message for Jimin</label>
+        <textarea id="cMsg" maxlength="600" rows="6" placeholder="Dear Jimin, happy birthday! …"></textarea>
+        <span id="cCount" class="small">0 / 600</span>
+
+        <label for="cFiles">Add photos, videos or GIFs (optional)</label>
+        <input id="cFiles" type="file" multiple
+               accept="image/jpeg,image/png,image/gif,image/webp,video/mp4,video/webm,video/quicktime">
+        <p id="fileInfo" class="small">Up to 3 files, 10 MB each.</p>
+
+        <button id="cSend" type="submit" class="cta">Send my card 💌</button>
+        <p id="cStatus" class="status" role="status"></p>
+      </form>
+
+      <div class="actions"><button id="toCards" class="cta" type="button">YOUR ARMY BIRTHDAY CARDS 💜</button></div>
+    </div>
+  </section>
+
+  <!-- PAGE 4: all cards -->
+  <section class="page" id="p-cards">
+    <div class="wrap">
+      <header class="pagehead">
+        <p class="ko huge">아미의 생일 카드</p>
+        <p class="en">ARMY birthday cards for Jimin</p>
+      </header>
+
+      <div class="board" id="pins3"></div>
+
+      <h2 class="cards-title">Cards from ARMY <span id="cardsCount"></span></h2>
+      <p id="cardsStatus" class="small"></p>
+      <div class="board" id="cardsWall"></div>
+
+      <div class="actions"><button id="toLetterAgain" class="cta ghostbtn" type="button">← Write a card</button></div>
+    </div>
+  </section>
+</main>
+
+<footer><p>Made with 💜 by an ARMY. Fan project, not affiliated with HYBE or BTS.</p></footer>
+
+<!-- photo viewer -->
+<div id="lb" class="lb" hidden>
+  <button id="lbClose" class="lb-x" aria-label="Close">✕</button>
+  <button id="lbPrev" class="lb-nav lb-prev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" alt="">
+  <button id="lbNext" class="lb-nav lb-next" aria-label="Next photo">›</button>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+<script src="config.js"></script>
+<script src="script.js"></script>
+<script src="https://www.youtube.com/iframe_api" async></script>
+</body>
+</html>
