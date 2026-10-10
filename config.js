@@ -29,5 +29,8 @@ const CONFIG = {
 
   // Fan cards sab ko dikhane ke liye (Supabase se milega, baad mein bharna hai)
   supabaseUrl: "",
-  supabaseKey: ""
+  supabaseKey: "",
+
+  // Test ke liye "Trial" button. Live karne se pehle false kar dena!
+  showTrialButton: true
 };

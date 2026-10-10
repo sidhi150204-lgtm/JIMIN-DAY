@@ -1,6 +1,6 @@
 // ================== Basics ==================
 const TARGET  = Date.UTC(2026, 9, 12, 15, 0, 0);   // 13 Oct 2026, 12:00 AM KST
-const PREVIEW = new URLSearchParams(location.search).has('preview'); // test ke liye: ?preview=1
+let PREVIEW = new URLSearchParams(location.search).has('preview'); // test ke liye: ?preview=1
 const DAY = 86400000;
 const $ = id => document.getElementById(id);
 const pad = n => String(n).padStart(2, '0');
@@ -344,6 +344,12 @@ function buildCard(c) {
   by.textContent = `${c.name || 'ARMY'}${c.age ? ', ' + c.age : ''}`;
   body.append(t, by); pin.append(body);
   return pin;
+}
+
+// ================== Trial button (sirf test ke liye) ==================
+if (CONFIG.showTrialButton) {
+  $('trial').hidden = false;
+  $('trial').addEventListener('click', () => { PREVIEW = true; tick(); $('trial').hidden = true; });
 }
 
 // ================== Start ==================

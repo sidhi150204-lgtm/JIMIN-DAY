@@ -183,3 +183,6 @@ footer{text-align:center;padding:24px 24px 90px;color:var(--lav);font-size:14px}
   html{scroll-behavior:auto}
   *{transition:none!important;animation:none!important}
 }
+
+.trial{display:block;margin-top:22px;background:transparent;color:var(--lav);border:2px dashed rgba(201,182,242,.55);font-size:15px;padding:9px 18px}
+.trial:hover{background:var(--plum);color:var(--paper)}
