@@ -28,8 +28,8 @@ const CONFIG = {
   playlist: "https://youtu.be/_cfY35xjHL4",
 
   // Fan cards sab ko dikhane ke liye (Supabase se milega, baad mein bharna hai)
-  supabaseUrl: "",
-  supabaseKey: "",
+  supabaseUrl: "https://ljdgqywdclhwaoromnek.supabase.co",
+  supabaseKey: "sb_publishable_wLfbYituk68waarb93vB9g_EIGYcPxF",
 
   // Test ke liye "Trial" button. Live karne se pehle false kar dena!
   showTrialButton: true
