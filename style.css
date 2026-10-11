@@ -186,3 +186,19 @@ footer{text-align:center;padding:24px 24px 90px;color:var(--lav);font-size:14px}
 
 .trial{display:block;margin-top:22px;background:transparent;color:var(--lav);border:2px dashed rgba(201,182,242,.55);font-size:15px;padding:9px 18px}
 .trial:hover{background:var(--plum);color:var(--paper)}
+
+/* phone (portrait): collage ko zoom mat karo, poori width mein upar dikhao */
+@media (max-width:1100px) and (orientation:portrait){
+  body::before{
+    background:
+      linear-gradient(rgba(28,15,51,.35) 0, rgba(28,15,51,.55) 30vw, rgba(28,15,51,1) 56vw),
+      var(--bg) top center/100% auto no-repeat,
+      radial-gradient(ellipse 80% 40% at 80% 5%, rgba(255,207,168,.22), transparent 60%),
+      radial-gradient(ellipse 90% 50% at 10% 95%, rgba(201,182,242,.2), transparent 65%),
+      var(--night);
+  }
+  .hero{padding-top:calc(56vw + 16px)}
+}
+
+/* heading collage ke upar bhi saaf padhe */
+.pagehead .ko,.pagehead .en,h1{text-shadow:0 2px 14px rgba(28,15,51,.95),0 0 4px rgba(28,15,51,.8)}
