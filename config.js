@@ -32,5 +32,5 @@ const CONFIG = {
   supabaseKey: "sb_publishable_wLfbYituk68waarb93vB9g_EIGYcPxF",
 
   // Test ke liye "Trial" button. Live karne se pehle false kar dena!
-  showTrialButton: true
+  showTrialButton: false
 };
